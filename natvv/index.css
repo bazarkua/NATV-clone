@@ -131,3 +131,15 @@ a{
   text-decoration: none;
 }
 
+.btn1{
+  font-weight: 700;
+  color: #c30736;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.btn1{
+  background-color: #c20937;
+  font-size: 15px;
+  color: #fff;
+}
+
