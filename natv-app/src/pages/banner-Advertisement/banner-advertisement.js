@@ -7,7 +7,7 @@ class bannerAd extends React.Component {
     render() {
         return (
             <>
-            <Header status="active"/>
+            
                 <main className="p-3">
                     <div className="row m-3 p-3 d-flex">
                         <div className={`${styles.textarea} col-lg-7 col-md-6 col-sm-4 col-xs-12`}>
