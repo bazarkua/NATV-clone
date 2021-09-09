@@ -1,41 +1,47 @@
 import React from 'react';
+import i18n from "../../i18n";
+import { withTranslation } from 'react-i18next';
 import styles from '../global-css/Advertisement.module.css';
 import Header from '../Header/Header';
 
 class lineAD extends React.Component {
     render() {
+        const { t } = this.props
         return (
             <>
-            
+
                 <div>
                     <main className="p-3">
                         <div className="row m-3 p-3 d-flex">
                             <div className={`${styles.textarea} col-lg-7 col-md-6 col-sm-4 col-xs-12`}>
                                 <div className={styles.header_textarea}>
-                                    <h3>ВВЕДИТЕ ТЕКСТ ОБЪЯВЛЕНИЯ</h3>
-                                    <p>Символов: <span>0</span></p>
+                                    <h3>{t('lineAD.ad-block.ad-block__textarea')}</h3>
+                                    <p>{t('lineAD.ad-block.ad-block__symbols')}: <span>0</span></p>
                                 </div>
-                                <textarea name id placeholder="Мебель. Отличное качество и выгодная цена. Звоните 0555123456" rows={10} defaultValue={""} />
+                                <textarea name id placeholder={t('lineAD.ad-block.ad-block__placeholder')} rows={10} defaultValue={""} />
                             </div>
                             <div className={`${styles.rules} col-lg-5 col-md-6 col-sm-4 col-xs-12`}>
-                                <h4>Правила заполнения текста</h4>
-                                <p>Уважаемый Рекламодатель!</p>
+                                <h4>{t("lineAD.rule-block.rule-block__h4")}</h4>
+                                <p>{t("lineAD.rule-block.rule-block__p")}!</p>
                                 <hr />
                                 <ul type="none">
                                     <li>
-                                        При заполнении объявления после каждого слова должен обязательно стоять пробел;
+                                        {t("lineAD.rule-block.rule-block__li_1")};
                                     </li>
-                                    <li>Размещенный текст не должен побуждать граждан к насилию, агрессии и опасным действиям, создающим угрозу
-                                        жизни и здоровью, а также призывающему к беспорядку;
+                                    <li>
+                                        {t("lineAD.rule-block.rule-block__li_2")};
                                     </li>
-                                    <li>Рекламодатель самостоятельно несет ответственность за соответствие рекламы действующему законодательству
-                                        Кыргызской Республики о рекламе;
+                                    <li>
+                                        {t("lineAD.rule-block.rule-block__li_3")};
                                     </li>
-                                    <li>Если рекламируемый товар/услуга подлежат лицензированию укажите номера лицензий и наименование органов,
-                                        выдавшего их и/или укажите «товар сертифицирован», если рекламируемый товар подлежит обязательной
-                                        сертификации;
+                                    <li>
+                                        {t("lineAD.rule-block.rule-block__li_4")};
                                     </li>
-                                    <li><a href="https://natv.kg/ru/sposobyoplaty">Оплатить можно любым удобным способом:</a></li>
+                                    <li>
+                                        <a href="https://natv.kg/ru/sposobyoplaty">
+                                        {t("lineAD.rule-block.rule-block__payment")}:
+                                        </a>
+                                    </li>
                                 </ul>
                                 <span>
                                     <img src="https://natv.kg/files/media/1/1326.jpg?1510923094325" alt="" />
@@ -58,28 +64,28 @@ class lineAD extends React.Component {
                             <div className={styles.numsBlock}>
                                 <div className={`${styles.number} m-2`}>1</div>
                                 <div>
-                                    <p>Введите текст вашего объявления</p>
+                                    <p>{t("lineAD.rule-block.rule-block__square_1")}</p>
                                 </div>
                             </div>
                             <div className={styles.numsBlock}>
                                 <div className={styles.number}>2</div>
                                 <div>
-                                    <p>Выберите телеканалы и даты, и нажмите "Разместить объявление"</p>
+                                    <p>{t("lineAD.rule-block.rule-block__square_2")}</p>
                                 </div>
                             </div>
                             <div className={styles.numsBlock}>
                                 <div className={styles.number}>3</div>
                                 <div>
-                                    <p>Оплатите объявление!</p>
+                                    <p>{t("lineAD.rule-block.rule-block__square_3")}!</p>
                                 </div>
                             </div>
                         </div>
                         <div className={styles.block_news}>
-                            <h1>Выбор каналов</h1>
+                            <h1>{t('lineAD.channle-block.channle-block__choose')}</h1>
                             <div className={styles.secondBlock}>
-                                <h4 className="col-md-6">Выберите каналы</h4>
-                                <h4 className="col-md-4">УКАЖИТЕ ДАТЫ</h4>
-                                <h4 className="col-md-2">стоимость</h4>
+                                <h4 className="col-md-6">{t('lineAD.channle-block.channle-block__choose_channle')}</h4>
+                                <h4 className="col-md-4">{t('lineAD.channle-block.channle-block__date')}</h4>
+                                <h4 className="col-md-2">{t('lineAD.channle-block.channle-block__cost')}</h4>
                             </div>
                             <hr className={styles.start_hr} />
                             <div className={`${styles.news} p-3`}>
@@ -102,7 +108,7 @@ class lineAD extends React.Component {
                             </div>
                             <hr className={styles.end_hr} />
                             <div className={styles.totalSum}>
-                                <h2>Общая сумма: <span>0</span> сом</h2>
+                                <h2>{t('lineAD.channle-block.channle-block__total')}: <span>0</span> сом</h2>
                             </div>
                         </div>
                         <div className={`${styles.infoClients} p-3 d-flex justify-content-between row`}>
@@ -132,11 +138,11 @@ class lineAD extends React.Component {
                             <hr />
                         </div>
                     </main>
-                    
+
                 </div>
             </>
         )
     }
 }
 
-export default lineAD;
+export default withTranslation()(lineAD);
