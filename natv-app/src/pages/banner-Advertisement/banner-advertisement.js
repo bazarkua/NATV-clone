@@ -1,10 +1,12 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import styles from '../global-css/Advertisement.module.css';
 import Header from '../Header/Header';
 
 
 class bannerAd extends React.Component {
     render() {
+        const { t } = this.props
         return (
             <>
             
@@ -25,25 +27,28 @@ class bannerAd extends React.Component {
                             </div>
                         </div>
                         <div className={`${styles.rules} col-lg-5 col-md-6 col-sm-4 col-xs-12`}>
-                            <h4>Правила заполнения текста</h4>
-                            <p>Уважаемый Рекламодатель!</p>
-                            <hr />
-                            <ul type="none">
-                                <li>
-                                    При заполнении объявления после каждого слова должен обязательно стоять пробел;
-                                </li>
-                                <li>Размещенный текст не должен побуждать граждан к насилию, агрессии и опасным действиям, создающим угрозу
-                                    жизни и здоровью, а также призывающему к беспорядку;
-                                </li>
-                                <li>Рекламодатель самостоятельно несет ответственность за соответствие рекламы действующему законодательству
-                                    Кыргызской Республики о рекламе;
-                                </li>
-                                <li>Если рекламируемый товар/услуга подлежат лицензированию укажите номера лицензий и наименование органов,
-                                    выдавшего их и/или укажите «товар сертифицирован», если рекламируемый товар подлежит обязательной
-                                    сертификации;
-                                </li>
-                                <li><a href="https://natv.kg/ru/sposobyoplaty">Оплатить можно любым удобным способом:</a></li>
-                            </ul>
+                        <h4>{t("lineAD.rule-block.rule-block__h4")}</h4>
+                                <p>{t("lineAD.rule-block.rule-block__p")}!</p>
+                                <hr />
+                                <ul type="none">
+                                    <li>
+                                        {t("lineAD.rule-block.rule-block__li_1")};
+                                    </li>
+                                    <li>
+                                        {t("lineAD.rule-block.rule-block__li_2")};
+                                    </li>
+                                    <li>
+                                        {t("lineAD.rule-block.rule-block__li_3")};
+                                    </li>
+                                    <li>
+                                        {t("lineAD.rule-block.rule-block__li_4")};
+                                    </li>
+                                    <li>
+                                        <a href="https://natv.kg/ru/sposobyoplaty">
+                                        {t("lineAD.rule-block.rule-block__payment")}:
+                                        </a>
+                                    </li>
+                                </ul>
                             <span>
                                 <img src="https://natv.kg/files/media/1/1326.jpg?1510923094325" alt="" />
                                 <img src="https://natv.kg/files/media/1/1327.jpg?1510923098156" alt="" />
@@ -62,31 +67,31 @@ class bannerAd extends React.Component {
                         </div>
                     </div>
                     <div className={`${styles.blockNums} m-3`}>
-                        <div className={styles.numsBlock}>
-                            <div className={`${styles.number} m-2`}>1</div>
-                            <div>
-                                <p>Введите текст вашего объявления</p>
+                            <div className={styles.numsBlock}>
+                                <div className={`${styles.number} m-2`}>1</div>
+                                <div>
+                                    <p>{t("lineAD.rule-block.rule-block__square_1")}</p>
+                                </div>
+                            </div>
+                            <div className={styles.numsBlock}>
+                                <div className={styles.number}>2</div>
+                                <div>
+                                    <p>{t("lineAD.rule-block.rule-block__square_2")}</p>
+                                </div>
+                            </div>
+                            <div className={styles.numsBlock}>
+                                <div className={styles.number}>3</div>
+                                <div>
+                                    <p>{t("lineAD.rule-block.rule-block__square_3")}!</p>
+                                </div>
                             </div>
                         </div>
-                        <div className={styles.numsBlock}>
-                            <div className={styles.number}>2</div>
-                            <div>
-                                <p>Выберите телеканалы и даты, и нажмите "Разместить объявление"</p>
-                            </div>
-                        </div>
-                        <div className={styles.numsBlock}>
-                            <div className={styles.number}>3</div>
-                            <div>
-                                <p>Оплатите объявление!</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={styles.block_news}>
-                            <h1>Выбор каналов</h1>
+                        <div className={styles.block_news}>
+                            <h1>{t('lineAD.channle-block.channle-block__choose')}</h1>
                             <div className={styles.secondBlock}>
-                                <h4 className="col-md-6">Выберите каналы</h4>
-                                <h4 className="col-md-4">УКАЖИТЕ ДАТЫ</h4>
-                                <h4 className="col-md-2">стоимость</h4>
+                                <h4 className="col-md-6">{t('lineAD.channle-block.channle-block__choose_channle')}</h4>
+                                <h4 className="col-md-4">{t('lineAD.channle-block.channle-block__date')}</h4>
+                                <h4 className="col-md-2">{t('lineAD.channle-block.channle-block__cost')}</h4>
                             </div>
                             <hr className={styles.start_hr} />
                             <div className={`${styles.news} p-3`}>
@@ -109,32 +114,32 @@ class bannerAd extends React.Component {
                             </div>
                             <hr className={styles.end_hr} />
                             <div className={styles.totalSum}>
-                                <h2>Общая сумма: <span>0</span> сом</h2>
+                                <h2>{t('lineAD.channle-block.channle-block__total')}: <span>0</span> сом</h2>
                             </div>
                         </div>
                         <div className={`${styles.infoClients} p-3 d-flex justify-content-between row`}>
                             <div className="col-md-4">
-                                <h4>КОНТАКТНЫЙ НОМЕР</h4>
-                                <input type="text" className="form-control" placeholder="Пример: 0555123456" />
+                                <h4>{t('lineAD.form-block.form-block__num.title')}</h4>
+                                <input type="text" className="form-control" placeholder={t('lineAD.form-block.form-block__num.placeholder')} />
                             </div>
                             <div className="col-md-4">
-                                <h4>E-MAIL</h4>
-                                <input type="email" className="form-control" placeholder="primer@mail.com" />
+                                <h4>{t('lineAD.form-block.form-block__email.title')}</h4>
+                                <input type="email" className="form-control" placeholder={t('lineAD.form-block.form-block__email.placeholder')} />
                             </div>
                             <div className="col-md-4">
-                                <h4>УКАЖИТЕ ФАМИЛИЮ И ИМЯ</h4>
-                                <input type="text" className="form-control" placeholder="Ф.И.О./ название организации" />
+                                <h4>{t('lineAD.form-block.form-block__name.title')}</h4>
+                                <input type="text" className="form-control" placeholder={t('lineAD.form-block.form-block__name.placeholder')} />
                             </div>
                             <div className={`${styles.instruction} p-3`}>
-                                <p>*Поля не обязательны для заполнения. Укажите номер телефона и мы отправим Вам код для оплаты SMS сообщением.
+                                <p>*{t('lineAD.form-block.form-block__rule.title_1')}.
                                 </p>
-                                <p>*Оплатите любым удобным способом!</p>
+                                <p>*{t('lineAD.form-block.form-block__rule.title_2')}!</p>
                             </div>
                             <div className={`${styles.reCapture} p-3`}>
-                                <div className="col-md-4"><p>Вам остался один шаг – нажмите разместить и получите код для оплаты!
+                                <div className="col-md-4"><p>{t('lineAD.form-block.form-block__button.title')}!
                                 </p></div>
                                 <div className="col-md-4" />
-                                <div className="col-md-4"><button>Разместить Обьявление</button></div>
+                                <div className="col-md-4"><button>{t('lineAD.form-block.form-block__button.button-title')}</button></div>
                             </div>
                             <hr />
                         </div>
@@ -145,4 +150,4 @@ class bannerAd extends React.Component {
     }
 }
 
-export default bannerAd;
+export default withTranslation()(bannerAd);

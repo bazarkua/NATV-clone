@@ -1,13 +1,15 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 
 class footerBlock extends React.Component {
     render () {
+        const { t } = this.props
         return(
             <>
                 <footer>
                         <div className="row">
                             <div className="col-4" style={{ width: '407px' }}>
-                                <p>©️2017. Сервис предоставляется ОсОО "НаТВ"</p>
+                                <p>{t('lineAD.footer-block.title')}</p>
                                 <a href="index.html">
                                     <span id="img">
                                         <img src="https://natv.kg/files/media/1/1326.jpg?1510923094325" alt="" />
@@ -31,34 +33,34 @@ class footerBlock extends React.Component {
                             <div className="col-4">
                                 <ul type="none">
                                     <li>
-                                        <a href>О проекте</a>
+                                        <a href>{t('lineAD.footer-block.link_1')}</a>
                                     </li>
                                     <li>
-                                        <a href>Способы оплаты</a>
+                                        <a href>{t('lineAD.footer-block.link_2')}</a>
                                     </li>
                                     <li>
-                                        <a href>Для юридических лиц</a>
+                                        <a href>{t('lineAD.footer-block.link_3')}</a>
                                     </li>
                                     <li>
-                                        <a href>Вопрос-ответ</a>
+                                        <a href>{t('lineAD.footer-block.link_4')}</a>
                                     </li>
                                     <li>
-                                        <a href>Видеоинструкция по размещению</a>
+                                        <a href>{t('lineAD.footer-block.link_5')}</a>
                                     </li>
                                     <li>
-                                        <a href>Договор публичной оферты</a>
+                                        <a href>{t('lineAD.footer-block.link_6')}</a>
                                     </li>
                                     <li>
-                                        <a href>Правила заполнения текста</a>
+                                        <a href>{t('lineAD.footer-block.link_7')}</a>
                                     </li>
                                 </ul>
                             </div>
                             <div className="col-4" style={{ width: '393px' }}>
                                 <p>
-                                    По вопросам сотрудничества:
-                                    <a href>info@natv.kg </a>
+                                {t('lineAD.footer-block.question')}:  
+                                    <a href="#"> {t('lineAD.footer-block.link_question')}</a>
                                     <br />
-                                    0 550 44 06 56, звонки пн-пт с 10:00 до 16:00
+                                    {t('lineAD.footer-block.num_date')}
                                 </p>
                             </div>
                         </div>
@@ -68,4 +70,4 @@ class footerBlock extends React.Component {
     }
 }
 
-export default footerBlock;
+export default withTranslation()(footerBlock);

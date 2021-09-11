@@ -5,6 +5,18 @@ import styles from '../global-css/Advertisement.module.css';
 import Header from '../Header/Header';
 
 class lineAD extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            symbols: 0
+        }
+
+        this.handlerCount = this.handlerCount.bind(this);
+    }
+    handlerCount(){
+        let symbol = document.getElementById('textarea_test').value;
+        this.setState({symbols: symbol.length})
+    }
     render() {
         const { t } = this.props
         return (
@@ -16,9 +28,9 @@ class lineAD extends React.Component {
                             <div className={`${styles.textarea} col-lg-7 col-md-6 col-sm-4 col-xs-12`}>
                                 <div className={styles.header_textarea}>
                                     <h3>{t('lineAD.ad-block.ad-block__textarea')}</h3>
-                                    <p>{t('lineAD.ad-block.ad-block__symbols')}: <span>0</span></p>
+                                    <p>{t('lineAD.ad-block.ad-block__symbols')}: <span>{this.state.symbols}</span></p>
                                 </div>
-                                <textarea name id placeholder={t('lineAD.ad-block.ad-block__placeholder')} rows={10} defaultValue={""} />
+                                <textarea name id='textarea_test' placeholder={t('lineAD.ad-block.ad-block__placeholder')} rows={10} defaultValue={""} onChange={this.handlerCount} />
                             </div>
                             <div className={`${styles.rules} col-lg-5 col-md-6 col-sm-4 col-xs-12`}>
                                 <h4>{t("lineAD.rule-block.rule-block__h4")}</h4>
@@ -113,27 +125,27 @@ class lineAD extends React.Component {
                         </div>
                         <div className={`${styles.infoClients} p-3 d-flex justify-content-between row`}>
                             <div className="col-md-4">
-                                <h4>КОНТАКТНЫЙ НОМЕР</h4>
-                                <input type="text" className="form-control" placeholder="Пример: 0555123456" />
+                                <h4>{t('lineAD.form-block.form-block__num.title')}</h4>
+                                <input type="text" className="form-control" placeholder={t('lineAD.form-block.form-block__num.placeholder')} />
                             </div>
                             <div className="col-md-4">
-                                <h4>E-MAIL</h4>
-                                <input type="email" className="form-control" placeholder="primer@mail.com" />
+                                <h4>{t('lineAD.form-block.form-block__email.title')}</h4>
+                                <input type="email" className="form-control" placeholder={t('lineAD.form-block.form-block__email.placeholder')} />
                             </div>
                             <div className="col-md-4">
-                                <h4>УКАЖИТЕ ФАМИЛИЮ И ИМЯ</h4>
-                                <input type="text" className="form-control" placeholder="Ф.И.О./ название организации" />
+                                <h4>{t('lineAD.form-block.form-block__name.title')}</h4>
+                                <input type="text" className="form-control" placeholder={t('lineAD.form-block.form-block__name.placeholder')} />
                             </div>
                             <div className={`${styles.instruction} p-3`}>
-                                <p>*Поля не обязательны для заполнения. Укажите номер телефона и мы отправим Вам код для оплаты SMS сообщением.
+                                <p>*{t('lineAD.form-block.form-block__rule.title_1')}.
                                 </p>
-                                <p>*Оплатите любым удобным способом!</p>
+                                <p>*{t('lineAD.form-block.form-block__rule.title_2')}!</p>
                             </div>
                             <div className={`${styles.reCapture} p-3`}>
-                                <div className="col-md-4"><p>Вам остался один шаг – нажмите разместить и получите код для оплаты!
+                                <div className="col-md-4"><p>{t('lineAD.form-block.form-block__button.title')}!
                                 </p></div>
                                 <div className="col-md-4" />
-                                <div className="col-md-4"><button>Разместить Обьявление</button></div>
+                                <div className="col-md-4"><button>{t('lineAD.form-block.form-block__button.button-title')}</button></div>
                             </div>
                             <hr />
                         </div>
