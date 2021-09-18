@@ -8,11 +8,20 @@ class lineAD extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            symbols: 0
+            symbols: 0,
+            data: []
         }
 
         this.handlerCount = this.handlerCount.bind(this);
     }
+
+    componentDidMount(){
+        fetch("http://localhost:3001/channles")
+        .then(response => response.json())
+        .then(data1 => this.setState.apply({data: data1}))
+
+    }
+
     handlerCount(){
         let symbol = document.getElementById('textarea_test').value;
         this.setState({symbols: symbol.length})
@@ -101,22 +110,16 @@ class lineAD extends React.Component {
                             </div>
                             <hr className={styles.start_hr} />
                             <div className={`${styles.news} p-3`}>
-                                <div className="row">
-                                    <div className="col-md-6 d-flex align-items-center">
-                                        <div className={styles.imagePlace}>
-                                            <img width="50px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/REN_TV_logo_2017.svg/200px-REN_TV_logo_2017.svg.png" alt="Ren Tv" />
-                                        </div>
-                                        <p className={styles.title}>РЕН ТВ</p>
-                                    </div>
-                                    <div className="col-md-4">
-                                        <div>
-                                            <input type="text" className={`form-control`} />
-                                        </div>
-                                    </div>
-                                    <div className="col-md-2">
-                                        <p><span>0</span>.0 сом</p>
-                                    </div>
-                                </div>
+                               
+
+
+
+
+
+
+
+
+
                             </div>
                             <hr className={styles.end_hr} />
                             <div className={styles.totalSum}>
